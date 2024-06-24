@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Lulo Clean';
+    src: url('lulo clean.ttf') format('truetype');
+}
+
+body {
+    background-color: black; /* Color de fondo por defecto */
+    background-image: url('background.jpg'); /* Imagen de fondo */
+    background-size: 100% auto; /* Ajustar fondo por altura */
+    background-position: center top; /* Centrar imagen de fondo en la parte superior */
+    background-repeat: repeat; /* Evitar repetición de la imagen de fondo */
+    color: white;
+    font-family: 'Lulo Clean', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.group-name {
+    margin: 10px 0 0 0;
+    color: #00008B; /* Color azul oscuro */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.member {
+    flex: 1 1 calc(25% - 20px); /* Ajustar el tamaño de cada miembro */
+    margin: 10px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    margin: 0 5px;
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+.social-links img {
+    width: 31px; /* Aumentar tamaño en un 30% */
+    height: 31px; /* Aumentar tamaño en un 30% */
+}
+
+.role {
+    font-size: 0.8em; /* Tamaño de fuente más pequeño */
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid white;
+}
