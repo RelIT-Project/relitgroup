@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Lulo Clean';
-    src: url('lulo clean.ttf') format('truetype');
+    src: url('luloclean.ttf') format('truetype');
 }
 
 body {
-    background-color: black; /* Color de fondo por defecto */
-    background-image: url('background.jpg'); /* Imagen de fondo */
-    background-size: 100% auto; /* Ajustar fondo por altura */
-    background-position: center top; /* Centrar imagen de fondo en la parte superior */
-    background-repeat: repeat; /* Evitar repetición de la imagen de fondo */
+    background-color: black; 
+    background-image: url('background.jpg'); 
+    background-size: 100% auto; 
+    background-position: center top; 
+    background-repeat: repeat; 
     color: white;
     font-family: 'Lulo Clean', Arial, sans-serif;
     margin: 0;
@@ -26,7 +26,7 @@ body {
 
 .group-name {
     margin: 10px 0 0 0;
-    color: #00008B; /* Color azul oscuro */
+    color: #00008B; 
 }
 
 .main-content {
@@ -46,7 +46,7 @@ body {
 }
 
 .member {
-    flex: 1 1 calc(25% - 20px); /* Ajustar el tamaño de cada miembro */
+    flex: 1 1 calc(25% - 20px);
     margin: 10px;
     text-align: center;
 }
@@ -61,16 +61,16 @@ body {
 
 .social-links a {
     margin: 0 5px;
-    text-decoration: none; /* Eliminar subrayado */
+    text-decoration: none; 
 }
 
 .social-links img {
-    width: 31px; /* Aumentar tamaño en un 30% */
-    height: 31px; /* Aumentar tamaño en un 30% */
+    width: 31px; 
+    height: 31px; 
 }
 
 .role {
-    font-size: 0.8em; /* Tamaño de fuente más pequeño */
+    font-size: 0.8em; 
 }
 
 .footer {
