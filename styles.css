@@ -6,10 +6,10 @@
 body {
     background-color: black; 
     background-image: url('background.jpg'); 
-    background-size: cover; /* Ajustar para que el fondo cubra toda la pantalla */
+    background-size: cover; 
     background-position: center top; 
-    background-repeat: no-repeat; /* Prevenir que la imagen de fondo se repita */
-    background-attachment: fixed; /* Mantener el fondo fijo mientras el contenido se desplaza */
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
     color: white;
     font-family: 'Lulo Clean', Arial, sans-serif;
     margin: 0;
@@ -36,7 +36,7 @@ body {
 }
 
 .our-project h1 {
-    color: #00008B;
+    color: white;
     font-size: 2em;
     margin-bottom: 20px;
 }
@@ -117,3 +117,4 @@ body {
     padding: 20px;
     border-top: 1px solid white;
 }
+
