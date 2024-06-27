@@ -30,15 +30,28 @@ body {
     color: #00008B; 
 }
 
-.our-project {
+.our-project, .our-team {
     text-align: center;
     padding: 20px;
 }
 
-.our-project h1 {
+.our-project h1, .our-team h1 {
     color: white;
     font-size: 2em;
     margin-bottom: 20px;
+}
+
+.horizontal-line, .thin-horizontal-line, .thick-horizontal-line {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.horizontal-line, .thin-horizontal-line {
+    border-top: 2px solid white;
+}
+
+.thick-horizontal-line {
+    border-top: 5px solid white;
 }
 
 .project-gallery {
@@ -50,6 +63,7 @@ body {
 .project-row {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
     margin-bottom: 20px;
@@ -117,4 +131,3 @@ body {
     padding: 20px;
     border-top: 1px solid white;
 }
-
