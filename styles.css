@@ -6,10 +6,10 @@
 body {
     background-color: black; 
     background-image: url('background.jpg'); 
-    background-size: 100% auto; 
+    background-size: cover; /* Ajustar para que el fondo cubra toda la pantalla */
     background-position: center top; 
-    background-repeat: repeat; 
-    background-attachment: fixed;
+    background-repeat: no-repeat; /* Prevenir que la imagen de fondo se repita */
+    background-attachment: fixed; /* Mantener el fondo fijo mientras el contenido se desplaza */
     color: white;
     font-family: 'Lulo Clean', Arial, sans-serif;
     margin: 0;
@@ -28,6 +28,44 @@ body {
 .group-name {
     margin: 10px 0 0 0;
     color: #00008B; 
+}
+
+.our-project {
+    text-align: center;
+    padding: 20px;
+}
+
+.our-project h1 {
+    color: #00008B;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.project-item {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
 .main-content {
