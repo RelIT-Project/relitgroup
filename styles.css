@@ -9,6 +9,7 @@ body {
     background-size: 100% auto; 
     background-position: center top; 
     background-repeat: repeat; 
+    background-attachment: fixed;
     color: white;
     font-family: 'Lulo Clean', Arial, sans-serif;
     margin: 0;
