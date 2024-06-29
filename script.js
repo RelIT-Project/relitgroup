@@ -1,65 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Target project images within the "OUR PROJECT" section
-    const projectImages = document.querySelectorAll(".our-project .project-image");  // Adjust class name if needed
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeButton = document.querySelector(".close");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-    let currentIndex = 0;
-  
-    projectImages.forEach((image, index) => {
+// JavaScript to handle lightbox functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".project-image").forEach(image => {
       image.addEventListener("click", () => {
-        currentIndex = index;
-        openLightbox(currentIndex);
+          lightbox.style.display = "block";
+          lightboxImg.src = image.src;
       });
-    });
-  
-    closeButton.addEventListener("click", closeLightbox);
-    prevButton.addEventListener("click", () => {
-      changeImage(-1);
-    });
-    nextButton.addEventListener("click", () => {
-      changeImage(1);
-    });
-  
-    function openLightbox(index) {
-      lightbox.style.display = "block";
-      lightboxImg.src = projectImages[index].src;
-    }
-  
-    function closeLightbox() {
-      lightbox.style.display = "none";
-    }
-  
-    function changeImage(direction) {
-      currentIndex += direction;
-      if (currentIndex < 0) {
-        currentIndex = projectImages.length - 1;
-      } else if (currentIndex >= projectImages.length) {
-        currentIndex = 0;
-      }
-      lightboxImg.src = projectImages[currentIndex].src;
-    }
-  
-    // Close the lightbox when clicking outside the image
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
-  
-    // Keyboard navigation for slideshow
-    document.addEventListener("keydown", (event) => {
-      if (lightbox.style.display === "block") {
-        if (event.key === "ArrowLeft") {
-          changeImage(-1);
-        } else if (event.key === "ArrowRight") {
-          changeImage(1);
-        } else if (event.key === "Escape") {
-          closeLightbox();
-        }
-      }
-    });
   });
-  
+
+  closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+      if (event.target == lightbox) {
+          lightbox.style.display = "none";
+      }
+  });
+});

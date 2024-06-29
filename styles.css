@@ -1,155 +1,151 @@
-@font-face {
-    font-family: 'Lulo Clean';
-    src: url('luloclean.ttf') format('truetype');
-}
-
+/* General Styles */
 body {
-    background-color: black;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    font-family: 'Lulo Clean', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa;
 }
 
-.header {
+header, footer {
+    background-color: #343a40;
+    color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 1rem;
 }
 
-.logo img {
+header .logo img, footer .logo img {
+    max-width: 100px;
+}
+
+/* Our Project Section */
+.our-project {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.our-project h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.horizontal-line {
     width: 100px;
-}
-
-.group-name {
-    margin: 10px 0 0 0;
-    color: #00008B;
-}
-
-.our-project,
-.our-team {
-    text-align: center;
-    padding: 20px;
-}
-
-.our-project h1,
-.our-team h1 {
-    color: white;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.horizontal-line,
-.thin-horizontal-line,
-.thick-horizontal-line {
-    width: 50%;
-    margin: 10px auto;
-}
-
-.horizontal-line,
-.thin-horizontal-line {
-    border-top: 2px solid white;
-}
-
-.thick-horizontal-line {
-    border-top: 5px solid white;
+    height: 4px;
+    background-color: #343a40;
+    margin: 0 auto 2rem;
 }
 
 .project-gallery {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .project-row {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .project-item {
-    flex: 1 1 calc(50% - 20px);
-    margin: 10px;
-    text-align: center;
+    margin: 0.5rem;
+}
+
+.project-image {
+    max-width: 100px;
     cursor: pointer;
 }
 
-.project-item img {
-    width: 100%;
-    height: auto;
-    border: 2px solid white;
-    border-radius: 10px;
-    transition: transform 0.3s;
+/* Our Team Section */
+.our-team {
+    text-align: center;
+    padding: 2rem 0;
 }
 
-.project-item img:hover {
-    transform: scale(1.05);
+.our-team h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
+.thick-horizontal-line {
+    width: 150px;
+    height: 6px;
+    background-color: #343a40;
+    margin: 0 auto 2rem;
+}
+
+.thin-horizontal-line {
+    width: 100px;
+    height: 4px;
+    background-color: #343a40;
+    margin: 0 auto 2rem;
+}
+
+/* Main Content Section */
 .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    text-align: center;
+    padding: 2rem 0;
 }
 
 .row {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 20px;
+    justify-content: center;
 }
 
 .member {
-    flex: 1 1 calc(25% - 20px);
-    margin: 10px;
+    margin: 1rem;
     text-align: center;
+}
+
+.member a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
     border-radius: 50%;
-    border: 2px solid white;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05);
     transition: transform 0.3s;
 }
 
-.social-links a {
-    margin: 0 5px;
-    text-decoration: none;
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.member h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
 }
 
 .social-links img {
-    width: 31px;
-    height: 31px;
+    max-width: 30px;
+    margin: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
 }
 
 .role {
-    font-size: 0.8em;
+    font-size: 1rem;
+    margin: 0.5rem 0;
 }
 
+/* Footer Section */
 .footer {
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid white;
+    padding: 1rem 0;
 }
 
-/* Lightbox (carousel) styles */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lightbox Modal */
 .lightbox {
     display: none;
     position: fixed;
@@ -158,66 +154,30 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
     overflow: auto;
-    padding-top: 50px; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .lightbox-content {
-    position: relative;
     margin: auto;
-    max-width: 80%;
-    text-align: center;
-}
-
-.lightbox-image {
-    width: auto; /* Adjust size of image as needed */
-    max-height: 80vh; /* Adjust maximum height of image */
-    border: 2px solid white;
-    border-radius: 10px;
+    display: block;
+    width: 80%;
+    max-width: 700px;
 }
 
 .close {
     position: absolute;
     top: 20px;
-    right: 30px;
-    color: white;
+    right: 35px;
+    color: #fff;
     font-size: 40px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
     cursor: pointer;
-}
-
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    user-select: none;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-.next {
-    right: 20px;
-}
-
-.prev {
-    left: 20px;
-}
-
-.prev:hover,
-.next:hover {
-    color: #ddd;
-}
-
-/* Show close button when lightbox is visible */
-.lightbox:target {
-    display: block;
 }
