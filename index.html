@@ -21,20 +21,20 @@
         <div class="horizontal-line"></div>
         <div class="project-gallery">
             <div class="project-row">
-                <div class="project-item"><img src="image1.jpg" alt="Project Image 1" class="project-image"></div>
-                <div class="project-item"><img src="image2.jpg" alt="Project Image 2" class="project-image"></div>
+                <div class="project-item"><img src="image1.jpg" alt="Project Image 1" class="carousel-image"></div>
+                <div class="project-item"><img src="image2.jpg" alt="Project Image 2" class="carousel-image"></div>
             </div>
             <div class="project-row">
-                <div class="project-item"><img src="image3.jpg" alt="Project Image 3" class="project-image"></div>
-                <div class="project-item"><img src="image4.jpg" alt="Project Image 4" class="project-image"></div>
+                <div class="project-item"><img src="image3.jpg" alt="Project Image 3" class="carousel-image"></div>
+                <div class="project-item"><img src="image4.jpg" alt="Project Image 4" class="carousel-image"></div>
             </div>
             <div class="project-row">
-                <div class="project-item"><img src="image5.jpg" alt="Project Image 5" class="project-image"></div>
-                <div class="project-item"><img src="image6.jpg" alt="Project Image 6" class="project-image"></div>
+                <div class="project-item"><img src="image5.jpg" alt="Project Image 5" class="carousel-image"></div>
+                <div class="project-item"><img src="image6.jpg" alt="Project Image 6" class="carousel-image"></div>
             </div>
             <div class="project-row">
-                <div class="project-item"><img src="image7.jpg" alt="Project Image 7" class="project-image"></div>
-                <div class="project-item"><img src="image8.jpg" alt="Project Image 8" class="project-image"></div>
+                <div class="project-item"><img src="image7.jpg" alt="Project Image 7" class="carousel-image"></div>
+                <div class="project-item"><img src="image8.jpg" alt="Project Image 8" class="carousel-image"></div>
             </div>
         </div>
     </section>
@@ -176,18 +176,17 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <p>Contact us at: relitgroup@gmail.com</p>
+        <div class="thin-horizontal-line"></div>
     </footer>
 
-    <!-- Carousel Modal -->
-    <div id="carouselModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="carouselImg">
-        <div class="caption-container">
-            <p id="caption"></p>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-image" src="" alt="Lightbox Image">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
     <script src="scripts.js"></script>

@@ -179,6 +179,7 @@ body {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    display: none; /* Initially hide the close button */
 }
 
 .prev, .next {
@@ -207,4 +208,9 @@ body {
 
 .prev:hover, .next:hover {
     color: #ddd;
+}
+
+/* Show close button when lightbox is visible */
+.lightbox:target .close {
+    display: block;
 }

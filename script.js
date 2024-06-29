@@ -1,43 +1,43 @@
-let slideIndex = 1;
-let slides;
-let modal = document.getElementById("carouselModal");
-let modalImg = document.getElementById("carouselImg");
-let captionText = document.getElementById("caption");
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".carousel-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    let currentIndex;
 
-document.querySelectorAll(".project-image").forEach((img, index) => {
-    img.onclick = function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-        slideIndex = index + 1;
-        showSlides(slideIndex);
+    images.forEach((image, index) => {
+        image.addEventListener("click", () => {
+            lightbox.style.display = "block";
+            lightboxImg.src = image.src;
+            currentIndex = index;
+        });
+    });
+
+    document.querySelector(".close").addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    document.querySelector(".prev").addEventListener("click", () => {
+        changeImage(-1);
+    });
+
+    document.querySelector(".next").addEventListener("click", () => {
+        changeImage(1);
+    });
+
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        lightboxImg.src = images[currentIndex].src;
     }
-});
 
-let close = document.getElementsByClassName("close")[0];
-close.onclick = function() {
-    modal.style.display = "none";
-}
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-    let i;
-    slides = document.querySelectorAll(".project-image");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    modalImg.src = slides[slideIndex-1].src;
-    captionText.innerHTML = slides[slideIndex-1].alt;
-}
-
-document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowRight") {
-        plusSlides(1);
-    } else if (event.key === "ArrowLeft") {
-        plusSlides(-1);
-    } else if (event.key === "Escape") {
-        modal.style.display = "none";
-    }
+    // Close the lightbox when clicking outside the image
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
 });
