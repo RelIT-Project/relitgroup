@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll(".carousel-image");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+    const closeButton = document.querySelector(".close");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
     let currentIndex;
 
     images.forEach((image, index) => {
@@ -9,18 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
             lightbox.style.display = "block";
             lightboxImg.src = image.src;
             currentIndex = index;
+            closeButton.style.display = "block"; // Show close button
         });
     });
 
-    document.querySelector(".close").addEventListener("click", () => {
+    closeButton.addEventListener("click", () => {
         lightbox.style.display = "none";
+        closeButton.style.display = "none"; // Hide close button
     });
 
-    document.querySelector(".prev").addEventListener("click", () => {
+    prevButton.addEventListener("click", () => {
         changeImage(-1);
     });
 
-    document.querySelector(".next").addEventListener("click", () => {
+    nextButton.addEventListener("click", () => {
         changeImage(1);
     });
 
@@ -38,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
     lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox) {
             lightbox.style.display = "none";
+            closeButton.style.display = "none"; // Hide close button
         }
     });
 });
