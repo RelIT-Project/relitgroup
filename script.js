@@ -1,65 +1,58 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Target project images within the "OUR PROJECT" section
-    const projectImages = document.querySelectorAll(".our-project .project-image");  // Adjust class name if needed
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeButton = document.querySelector(".close");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-    let currentIndex = 0;
-  
-    projectImages.forEach((image, index) => {
-      image.addEventListener("click", () => {
-        currentIndex = index;
-        openLightbox(currentIndex);
-      });
-    });
-  
-    closeButton.addEventListener("click", closeLightbox);
-    prevButton.addEventListener("click", () => {
-      changeImage(-1);
-    });
-    nextButton.addEventListener("click", () => {
-      changeImage(1);
-    });
-  
-    function openLightbox(index) {
-      lightbox.style.display = "block";
-      lightboxImg.src = projectImages[index].src;
+// Slideshow script
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-  
-    function closeLightbox() {
-      lightbox.style.display = "none";
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
     }
-  
-    function changeImage(direction) {
-      currentIndex += direction;
-      if (currentIndex < 0) {
-        currentIndex = projectImages.length - 1;
-      } else if (currentIndex >= projectImages.length) {
-        currentIndex = 0;
-      }
-      lightboxImg.src = projectImages[currentIndex].src;
-    }
-  
-    // Close the lightbox when clicking outside the image
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
+    
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+// Lightbox script
+let lightbox = document.getElementById('lightbox');
+let lightboxImg = document.getElementById('lightbox-img');
+
+function openLightbox(imageSrc) {
+    lightbox.style.display = 'block';
+    lightboxImg.src = imageSrc;
+}
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+}
+
+// Change image in lightbox
+let slideIndexLightbox = 1;
+
+function changeImage(n) {
+    showImage(slideIndexLightbox += n);
+}
+
+function showImage(n) {
+    let slides = document.getElementsByClassName("mySlides");
+    
+    if (n > slides.length) { slideIndexLightbox = 1 }
+    if (n < 1) { slideIndexLightbox = slides.length }
+    
+    lightboxImg.src = slides[slideIndexLightbox - 1].querySelector('img').src;
+}
+
+// Automatically close lightbox if clicked outside the image
+window.onclick = function(event) {
+    if (event.target == lightbox) {
         closeLightbox();
-      }
-    });
-  
-    // Keyboard navigation for slideshow
-    document.addEventListener("keydown", (event) => {
-      if (lightbox.style.display === "block") {
-        if (event.key === "ArrowLeft") {
-          changeImage(-1);
-        } else if (event.key === "ArrowRight") {
-          changeImage(1);
-        } else if (event.key === "Escape") {
-          closeLightbox();
-        }
-      }
-    });
-  });
-  
+    }
+};
