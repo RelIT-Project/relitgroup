@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextButton = document.querySelector(".next");
     let currentIndex;
 
-    // Abrir lightbox al hacer clic en una imagen
     projectImages.forEach((image, index) => {
         image.addEventListener("click", () => {
             currentIndex = index;
@@ -15,12 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Cerrar lightbox al hacer clic en el botón de cierre
-    closeButton.addEventListener("click", () => {
-        closeLightbox();
-    });
+    closeButton.addEventListener("click", closeLightbox);
 
-    // Cambiar imagen hacia atrás o adelante
     prevButton.addEventListener("click", () => {
         changeImage(-1);
     });
@@ -29,18 +24,15 @@ document.addEventListener("DOMContentLoaded", function() {
         changeImage(1);
     });
 
-    // Función para abrir el lightbox
     function openLightbox(index) {
         lightbox.style.display = "block";
         lightboxImg.src = projectImages[index].src;
     }
 
-    // Función para cerrar el lightbox
     function closeLightbox() {
         lightbox.style.display = "none";
     }
 
-    // Función para cambiar la imagen
     function changeImage(direction) {
         currentIndex += direction;
         if (currentIndex < 0) {
@@ -51,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
         lightboxImg.src = projectImages[currentIndex].src;
     }
 
-    // Cerrar lightbox al hacer clic fuera de la imagen
+    // Close the lightbox when clicking outside the image
     lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox) {
             closeLightbox();
         }
     });
 
-    // Navegación con teclado para el slideshow
+    // Keyboard navigation for slideshow
     document.addEventListener("keydown", (event) => {
         if (lightbox.style.display === "block") {
             if (event.key === "ArrowLeft") {
