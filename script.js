@@ -12,13 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
             lightbox.style.display = "block";
             lightboxImg.src = image.src;
             currentIndex = index;
-            closeButton.style.display = "block"; // Show close button
         });
     });
 
     closeButton.addEventListener("click", () => {
         lightbox.style.display = "none";
-        closeButton.style.display = "none"; // Hide close button
     });
 
     prevButton.addEventListener("click", () => {
@@ -43,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
     lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox) {
             lightbox.style.display = "none";
-            closeButton.style.display = "none"; // Hide close button
         }
     });
 });
