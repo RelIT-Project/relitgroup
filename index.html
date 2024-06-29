@@ -22,34 +22,34 @@
         <div class="project-gallery">
             <div class="project-row">
                 <div class="project-item">
-                    <img src="image1.jpg" alt="Project Image 1" class="project-image" onclick="openSlideshow(0)">
+                    <img src="image1.jpg" alt="Project Image 1" class="project-image">
                 </div>
                 <div class="project-item">
-                    <img src="image2.jpg" alt="Project Image 2" class="project-image" onclick="openSlideshow(1)">
-                </div>
-            </div>
-            <div class="project-row">
-                <div class="project-item">
-                    <img src="image3.jpg" alt="Project Image 3" class="project-image" onclick="openSlideshow(2)">
-                </div>
-                <div class="project-item">
-                    <img src="image4.jpg" alt="Project Image 4" class="project-image" onclick="openSlideshow(3)">
+                    <img src="image2.jpg" alt="Project Image 2" class="project-image">
                 </div>
             </div>
             <div class="project-row">
                 <div class="project-item">
-                    <img src="image5.jpg" alt="Project Image 5" class="project-image" onclick="openSlideshow(4)">
+                    <img src="image3.jpg" alt="Project Image 3" class="project-image">
                 </div>
                 <div class="project-item">
-                    <img src="image6.jpg" alt="Project Image 6" class="project-image" onclick="openSlideshow(5)">
+                    <img src="image4.jpg" alt="Project Image 4" class="project-image">
                 </div>
             </div>
             <div class="project-row">
                 <div class="project-item">
-                    <img src="image7.jpg" alt="Project Image 7" class="project-image" onclick="openSlideshow(6)">
+                    <img src="image5.jpg" alt="Project Image 5" class="project-image">
                 </div>
                 <div class="project-item">
-                    <img src="image8.jpg" alt="Project Image 8" class="project-image" onclick="openSlideshow(7)">
+                    <img src="image6.jpg" alt="Project Image 6" class="project-image">
+                </div>
+            </div>
+            <div class="project-row">
+                <div class="project-item">
+                    <img src="image7.jpg" alt="Project Image 7" class="project-image">
+                </div>
+                <div class="project-item">
+                    <img src="image8.jpg" alt="Project Image 8" class="project-image">
                 </div>
             </div>
         </div>
@@ -192,27 +192,21 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="thin-horizontal-line"></div>
+        <div class="footer-text">
+            <p>&copy; 2024 Relitgroup | Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <!-- Lightbox -->
+    <!-- Lightbox Section -->
     <div id="lightbox" class="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
+        <span class="close">&times;</span>
         <div class="lightbox-content">
             <img id="lightbox-img" class="lightbox-image" src="" alt="Lightbox Image">
-            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-            <button class="next" onclick="changeImage(1)">&#10095;</button>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
     </div>
 
-    <script src="scripts.js"></script>
-    <script>
-        // Función para abrir el slideshow al hacer clic en una imagen de proyecto
-        function openSlideshow(index) {
-            document.getElementById('lightbox-img').src = document.querySelectorAll('.project-image')[index].src;
-            document.getElementById('lightbox').style.display = 'block';
-            currentIndex = index;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

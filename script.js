@@ -6,62 +6,68 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
     let currentIndex;
-  
+
+    // Abrir lightbox al hacer clic en una imagen
     projectImages.forEach((image, index) => {
-      image.addEventListener("click", () => {
-        currentIndex = index;
-        openLightbox(currentIndex);
-      });
+        image.addEventListener("click", () => {
+            currentIndex = index;
+            openLightbox(currentIndex);
+        });
     });
-  
-    closeButton.addEventListener("click", closeLightbox);
-  
-    prevButton.addEventListener("click", () => {
-      changeImage(-1);
-    });
-  
-    nextButton.addEventListener("click", () => {
-      changeImage(1);
-    });
-  
-    function openLightbox(index) {
-      lightbox.style.display = "block";
-      lightboxImg.src = projectImages[index].src;
-      changeImage(index); // Call changeImage to display the image
-    }
-  
-    function closeLightbox() {
-      lightbox.style.display = "none";
-    }
-  
-    function changeImage(direction) {
-      currentIndex += direction;
-      if (currentIndex === -1) {
-        currentIndex = projectImages.length - 1;
-      } else if (currentIndex === projectImages.length) {
-        currentIndex = 0;
-      }
-      lightboxImg.src = projectImages[currentIndex].src;
-    }
-  
-    // Close the lightbox when clicking outside the image
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
+
+    // Cerrar lightbox al hacer clic en el botón de cierre
+    closeButton.addEventListener("click", () => {
         closeLightbox();
-      }
     });
-  
-    // Keyboard navigation for slideshow
-    document.addEventListener("keydown", (event) => {
-      if (lightbox.style.display === "block") {
-        if (event.key === "ArrowLeft") {
-          changeImage(-1);
-        } else if (event.key === "ArrowRight") {
-          changeImage(1);
-        } else if (event.key === "Escape") {
-          closeLightbox();
+
+    // Cambiar imagen hacia atrás o adelante
+    prevButton.addEventListener("click", () => {
+        changeImage(-1);
+    });
+
+    nextButton.addEventListener("click", () => {
+        changeImage(1);
+    });
+
+    // Función para abrir el lightbox
+    function openLightbox(index) {
+        lightbox.style.display = "block";
+        lightboxImg.src = projectImages[index].src;
+    }
+
+    // Función para cerrar el lightbox
+    function closeLightbox() {
+        lightbox.style.display = "none";
+    }
+
+    // Función para cambiar la imagen
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = projectImages.length - 1;
+        } else if (currentIndex >= projectImages.length) {
+            currentIndex = 0;
         }
-      }
+        lightboxImg.src = projectImages[currentIndex].src;
+    }
+
+    // Cerrar lightbox al hacer clic fuera de la imagen
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
     });
-  });
-  
+
+    // Navegación con teclado para el slideshow
+    document.addEventListener("keydown", (event) => {
+        if (lightbox.style.display === "block") {
+            if (event.key === "ArrowLeft") {
+                changeImage(-1);
+            } else if (event.key === "ArrowRight") {
+                changeImage(1);
+            } else if (event.key === "Escape") {
+                closeLightbox();
+            }
+        }
+    });
+});

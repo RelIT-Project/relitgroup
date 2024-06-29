@@ -1,223 +1,195 @@
-@font-face {
-    font-family: 'Lulo Clean';
-    src: url('luloclean.ttf') format('truetype');
-}
-
+/* General Styles */
 body {
-    background-color: black;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    font-family: 'Lulo Clean', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
 .header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 1rem 0;
 }
 
-.logo img {
+.header .logo img {
     width: 100px;
+    height: auto;
 }
 
-.group-name {
-    margin: 10px 0 0 0;
-    color: #00008B;
-}
-
-.our-project,
-.our-team {
+.our-project {
     text-align: center;
-    padding: 20px;
+    padding: 2rem 0;
 }
 
-.our-project h1,
-.our-team h1 {
-    color: white;
-    font-size: 2em;
-    margin-bottom: 20px;
+.our-project h1 {
+    margin-bottom: 1rem;
 }
 
-.horizontal-line,
-.thin-horizontal-line,
-.thick-horizontal-line {
-    width: 50%;
-    margin: 10px auto;
-}
-
-.horizontal-line,
-.thin-horizontal-line {
-    border-top: 2px solid white;
-}
-
-.thick-horizontal-line {
-    border-top: 5px solid white;
+.horizontal-line {
+    border-top: 2px solid #333;
+    width: 80px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .project-gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.project-row {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    justify-items: center;
 }
 
 .project-item {
-    flex: 1 1 calc(50% - 20px);
-    margin: 10px;
-    text-align: center;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.project-item img {
+.project-image {
     width: 100%;
     height: auto;
-    border: 2px solid white;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.project-item img:hover {
-    transform: scale(1.05);
+.project-image:hover {
+    transform: scale(1.1);
+}
+
+/* Our Team Section */
+.our-team {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.thick-horizontal-line {
+    border-top: 4px solid #333;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.thin-horizontal-line {
+    border-top: 2px solid #333;
+    width: 60px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    padding: 2rem 10%;
 }
 
 .row {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 20px;
+    gap: 2rem;
 }
 
 .member {
-    flex: 1 1 calc(25% - 20px);
-    margin: 10px;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .profile-pic {
     width: 150px;
     height: 150px;
+    object-fit: cover;
     border-radius: 50%;
-    border: 2px solid white;
-    margin-bottom: 10px;
-    cursor: pointer;
+    border: 4px solid #333;
+    transition: transform 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
+    transform: scale(1.1);
+}
+
+.social-links {
+    margin-top: 1rem;
 }
 
 .social-links a {
-    margin: 0 5px;
-    text-decoration: none;
-}
-
-.social-links img {
-    width: 31px;
-    height: 31px;
+    margin-right: 1rem;
 }
 
 .role {
-    font-size: 0.8em;
+    margin-top: 1rem;
+    font-style: italic;
 }
 
+/* Footer Section */
 .footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid white;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Lightbox (carousel) styles */
+/* Lightbox Styles */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
     overflow: auto;
-    padding-top: 50px; /* Adjust as needed */
 }
 
 .lightbox-content {
     position: relative;
     margin: auto;
-    max-width: 80%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
 }
 
 .lightbox-image {
-    width: auto; /* Adjust size of image as needed */
-    max-height: 80vh; /* Adjust maximum height of image */
-    border: 2px solid white;
-    border-radius: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
 .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
+    top: 15px;
+    right: 35px;
     font-size: 40px;
     font-weight: bold;
+    color: #f1f1f1;
     cursor: pointer;
 }
 
-.prev,
-.next {
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: white;
+    font-size: 40px;
     font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    user-select: none;
+    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    background: transparent;
     cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
 }
 
-.next {
-    right: 20px;
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
-    left: 20px;
+    left: 0;
 }
 
-.prev:hover,
-.next:hover {
-    color: #ddd;
-}
-
-/* Show close button when lightbox is visible */
-.lightbox:target {
-    display: block;
+.next {
+    right: 0;
 }
