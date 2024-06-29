@@ -1,9 +1,9 @@
-/* General Styles */
+/* Reset and General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Mantén el fondo original */
 }
 
 .header {
@@ -13,9 +13,8 @@ body {
     padding: 1rem 0;
 }
 
-.header .logo img {
+.logo img {
     width: 100px;
-    height: auto;
 }
 
 .our-project {
@@ -23,32 +22,34 @@ body {
     padding: 2rem 0;
 }
 
-.our-project h1 {
-    margin-bottom: 1rem;
-}
-
 .horizontal-line {
     border-top: 2px solid #333;
-    width: 80px;
+    width: 50%;
     margin: 0 auto;
-    margin-bottom: 2rem;
 }
 
 .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.project-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .project-item {
-    position: relative;
-    overflow: hidden;
+    margin: 0 0.5rem;
 }
 
 .project-image {
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -57,7 +58,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Our Team Section */
 .our-team {
     text-align: center;
     padding: 2rem 0;
@@ -65,16 +65,14 @@ body {
 
 .thick-horizontal-line {
     border-top: 4px solid #333;
-    width: 100px;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    width: 30%;
+    margin: 0 auto 1rem;
 }
 
 .thin-horizontal-line {
     border-top: 2px solid #333;
-    width: 60px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+    width: 10%;
+    margin: 0 auto 2rem;
 }
 
 .main-content {
@@ -85,7 +83,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .member {
@@ -98,28 +96,23 @@ body {
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #333;
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-}
-
-.social-links {
-    margin-top: 1rem;
-}
-
-.social-links a {
-    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .role {
-    margin-top: 1rem;
     font-style: italic;
+    color: #666;
 }
 
-/* Footer Section */
+.social-links {
+    margin-top: 0.5rem;
+}
+
+.social-links img {
+    width: 30px;
+    margin: 0 0.5rem;
+}
+
 .footer {
     background-color: #333;
     color: #fff;
@@ -130,7 +123,7 @@ body {
     width: 100%;
 }
 
-/* Lightbox Styles */
+/* Slideshow Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -141,6 +134,8 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
+    height: 100vh; /* Alto completo de la ventana */
+    width: 100%; /* Ancho completo de la ventana */
 }
 
 .lightbox-content {
@@ -158,38 +153,27 @@ body {
     object-fit: contain;
 }
 
-.close {
+.close-btn {
     position: absolute;
     top: 15px;
-    right: 35px;
-    font-size: 40px;
-    font-weight: bold;
+    right: 25px;
+    font-size: 35px;
     color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .project-image {
+        width: 100%;
+        height: auto;
+    }
 }
