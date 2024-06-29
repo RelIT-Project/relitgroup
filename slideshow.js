@@ -1,3 +1,5 @@
+// slideshow.js
+
 document.addEventListener("DOMContentLoaded", function() {
     const projectImages = document.querySelectorAll(".project-image");
     const lightbox = document.getElementById("lightbox");
