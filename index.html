@@ -6,6 +6,17 @@
     <title>Relitgroup</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        /* Additional CSS for image enlargement */
+        .project-item:target img {
+            transform: scale(1.5);
+            z-index: 1;
+        }
+
+        .project-item img {
+            transition: transform 0.3s ease-out;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -21,35 +32,51 @@
         <div class="horizontal-line"></div>
         <div class="project-gallery">
             <div class="project-row">
-                <div class="project-item">
-                    <img src="image1.jpg" alt="Project Image 1" class="project-image">
+                <div class="project-item" id="project1">
+                    <a href="#project1">
+                        <img src="image1.jpg" alt="Project Image 1" class="project-image">
+                    </a>
                 </div>
-                <div class="project-item">
-                    <img src="image2.jpg" alt="Project Image 2" class="project-image">
-                </div>
-            </div>
-            <div class="project-row">
-                <div class="project-item">
-                    <img src="image3.jpg" alt="Project Image 3" class="project-image">
-                </div>
-                <div class="project-item">
-                    <img src="image4.jpg" alt="Project Image 4" class="project-image">
+                <div class="project-item" id="project2">
+                    <a href="#project2">
+                        <img src="image2.jpg" alt="Project Image 2" class="project-image">
+                    </a>
                 </div>
             </div>
             <div class="project-row">
-                <div class="project-item">
-                    <img src="image5.jpg" alt="Project Image 5" class="project-image">
+                <div class="project-item" id="project3">
+                    <a href="#project3">
+                        <img src="image3.jpg" alt="Project Image 3" class="project-image">
+                    </a>
                 </div>
-                <div class="project-item">
-                    <img src="image6.jpg" alt="Project Image 6" class="project-image">
+                <div class="project-item" id="project4">
+                    <a href="#project4">
+                        <img src="image4.jpg" alt="Project Image 4" class="project-image">
+                    </a>
                 </div>
             </div>
             <div class="project-row">
-                <div class="project-item">
-                    <img src="image7.jpg" alt="Project Image 7" class="project-image">
+                <div class="project-item" id="project5">
+                    <a href="#project5">
+                        <img src="image5.jpg" alt="Project Image 5" class="project-image">
+                    </a>
                 </div>
-                <div class="project-item">
-                    <img src="image8.jpg" alt="Project Image 8" class="project-image">
+                <div class="project-item" id="project6">
+                    <a href="#project6">
+                        <img src="image6.jpg" alt="Project Image 6" class="project-image">
+                    </a>
+                </div>
+            </div>
+            <div class="project-row">
+                <div class="project-item" id="project7">
+                    <a href="#project7">
+                        <img src="image7.jpg" alt="Project Image 7" class="project-image">
+                    </a>
+                </div>
+                <div class="project-item" id="project8">
+                    <a href="#project8">
+                        <img src="image8.jpg" alt="Project Image 8" class="project-image">
+                    </a>
                 </div>
             </div>
         </div>
@@ -166,26 +193,26 @@
                     <a href="https://www.linkedin.com/in/matias-developer" target="_blank">
                         <img src="linkedin-icon.webp" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/Mtiass" target="_blank">
+                    <a href="https://github.com/matidls" target="_blank">
                         <img src="github-icon.webp" alt="GitHub">
                     </a>
                 </div>
-                <p class="role">Backend</p>
+                <p class="role">Frontend</p>
             </div>
             <div class="member">
-                <a href="http://www.linkedin.com/in/pablo-salina-6912b5196" target="_blank">
+                <a href="https://www.linkedin.com/in/eleuterio-elias-villanueva-saguier-86108b192/" target="_blank">
                     <img src="pablo.png" alt="Pablo Salina" class="profile-pic">
                 </a>
                 <h2>Pablo<br>Salina</h2>
                 <div class="social-links">
-                    <a href="http://www.linkedin.com/in/pablo-salina-6912b5196" target="_blank">
+                    <a href="https://www.linkedin.com/in/eleuterio-elias-villanueva-saguier-86108b192/" target="_blank">
                         <img src="linkedin-icon.webp" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/pablosalina1" target="_blank">
+                    <a href="https://github.com/Elivs99" target="_blank">
                         <img src="github-icon.webp" alt="GitHub">
                     </a>
                 </div>
-                <p class="role">Backend</p>
+                <p class="role">Devops</p>
             </div>
         </div>
     </main>
