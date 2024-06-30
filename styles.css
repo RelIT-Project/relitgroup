@@ -1,3 +1,4 @@
+/* Estilos generales */
 @font-face {
     font-family: 'Lulo Clean';
     src: url('luloclean.ttf') format('truetype');
@@ -148,41 +149,55 @@ body {
     padding: 20px;
     border-top: 1px solid white;
 }
-/* Estilos adicionales para el formulario de contacto */
-.contact-form {
-    background-color: #f2f2f2;
+
+/* Estilos adicionales para secciones específicas */
+.additional-text {
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
 }
 
-.contact-form form {
-    max-width: 600px;
+.additional-text-content {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.contact-form label {
-    display: inline-block;
+.contact-form {
+    background-color: #333;
     text-align: left;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    margin-top: 20px;
+}
+
+.contact-form label {
+    display: block;
     margin-bottom: 5px;
+    color: white;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: calc(50% - 5px);
-    display: inline-block;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid #ccc;
     box-sizing: border-box;
     font-size: 16px;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 .contact-form textarea {
-    width: 100%;
+    resize: vertical;
 }
 
 .contact-form input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     border: none;
     padding: 10px 20px;
