@@ -201,7 +201,7 @@
 <footer class="footer">
     <h2>CONTACT US</h2> <!-- Añadido -->
     <div class="contact-form">
-        <form action="https://formspree.io/f/xanwyyed" method="POST" onsubmit="handleFormSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/xanwyyed" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -224,7 +224,7 @@
 </footer>
 
 <script>
-    function handleFormSubmit(event) {
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
         // Envía el formulario usando Fetch API o XMLHttpRequest
@@ -246,7 +246,7 @@
             window.scrollTo(0, 0);
         })
         .catch(error => console.error('Error al enviar formulario:', error));
-    }
+    });
 </script>
 
 </body>
