@@ -21,19 +21,31 @@
             margin: 0 auto;
         }
         .contact-form {
+            background-color: #f2f2f2;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
         }
         .contact-form form {
             max-width: 600px;
             margin: 0 auto;
         }
-        .contact-form label,
+        .contact-form label {
+            display: inline-block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
         .contact-form input,
         .contact-form textarea {
-            display: block;
-            width: 100%;
+            width: calc(50% - 5px);
+            display: inline-block;
+            padding: 10px;
             margin-bottom: 10px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            width: 100%;
         }
         .contact-form input[type="submit"] {
             background-color: #4CAF50;
@@ -61,6 +73,13 @@
     <section class="our-project">
         <h1>Our Project</h1>
         <div class="horizontal-line"></div>
+        <!-- Texto adicional antes de las imágenes -->
+        <div class="additional-text">
+            <div class="additional-text-content">
+                <p>In the framework of the outsourcing law, companies that subcontract personnel have certain responsibilities. Our client's need was a tool to facilitate compliance with these obligations. We developed a multi-company platform that manages environments for suppliers, performs controls, and provides reports to clients, ensuring legal compliance.</p>
+            </div>
+        </div>
+        <!-- Galería de imágenes -->
         <div class="project-gallery">
             <div class="project-row">
                 <div class="project-item">
@@ -94,14 +113,6 @@
                     <img src="image8.jpg" alt="Project Image 8" class="project-image">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Additional Text Section -->
-    <section class="additional-text">
-        <div class="thin-horizontal-line"></div>
-        <div class="additional-text-content">
-            <p>In the framework of the outsourcing law, companies that subcontract personnel have certain responsibilities. Our client's need was a tool to facilitate compliance with these obligations. We developed a multi-company platform that manages environments for suppliers, performs controls, and provides reports to clients, ensuring legal compliance.</p>
         </div>
     </section>
 
@@ -247,13 +258,19 @@
         <!-- Formulario de contacto -->
         <div class="contact-form">
             <h2>Contact Us</h2>
-            <form action="mailto:tudireccion@correo.com" method="post" enctype="text/plain">
-                <label for="fullname">Name and Surname:</label><br>
-                <input type="text" id="fullname" name="fullname" required><br><br>
+            <form action="mailto:adolfogsilveira@gmail.com" method="post" enctype="text/plain">
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="width: 48%;">
+                        <label for="fullname">Name and Surname:</label><br>
+                        <input type="text" id="fullname" name="fullname" required><br><br>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="phone">Phone:</label><br>
+                        <input type="tel" id="phone" name="phone"><br><br>
+                    </div>
+                </div>
                 <label for="email">Contact Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
-                <label for="phone">Phone:</label><br>
-                <input type="tel" id="phone" name="phone"><br><br>
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
                 <input type="submit" value="Send">
