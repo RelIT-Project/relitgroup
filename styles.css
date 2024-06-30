@@ -1,183 +1,193 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Reset Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    box-sizing: border-box;
 }
 
-header, footer {
-    background-color: #343a40;
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Section */
+.header {
+    background-color: #333;
     color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 1rem;
 }
 
-header .logo img, footer .logo img {
+.logo img {
     max-width: 100px;
+    height: auto;
 }
 
 /* Our Project Section */
 .our-project {
+    background-color: #fff;
+    padding: 50px 20px;
     text-align: center;
-    padding: 2rem 0;
 }
 
 .our-project h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .horizontal-line {
-    width: 100px;
-    height: 4px;
-    background-color: #343a40;
-    margin: 0 auto 2rem;
+    border-top: 1px solid #ccc;
+    margin: 20px auto;
+    width: 50%;
 }
 
 .project-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.project-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .project-item {
-    margin: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .project-image {
-    max-width: 100px;
-    cursor: pointer;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 /* Our Team Section */
 .our-team {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
     text-align: center;
-    padding: 2rem 0;
-}
-
-.our-team h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
 }
 
 .thick-horizontal-line {
-    width: 150px;
-    height: 6px;
-    background-color: #343a40;
-    margin: 0 auto 2rem;
+    border-top: 3px solid #333;
+    margin: 20px auto;
+    width: 50px;
 }
 
 .thin-horizontal-line {
-    width: 100px;
-    height: 4px;
-    background-color: #343a40;
-    margin: 0 auto 2rem;
+    border-top: 1px solid #333;
+    margin: 20px auto;
+    width: 50%;
 }
 
-/* Main Content Section */
 .main-content {
-    text-align: center;
-    padding: 2rem 0;
+    background-color: #fff;
+    padding: 50px 20px;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .member {
-    margin: 1rem;
     text-align: center;
-}
-
-.member a {
-    text-decoration: none;
-    color: inherit;
+    flex: 1 1 300px;
+    padding: 20px;
 }
 
 .profile-pic {
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    transition: transform 0.3s;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-.profile-pic:hover {
-    transform: scale(1.1);
+.social-links {
+    margin-top: 10px;
 }
 
-.member h2 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-}
-
-.social-links img {
-    max-width: 30px;
-    margin: 0.5rem;
-    transition: transform 0.3s;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
+.social-links a {
+    margin: 0 10px;
 }
 
 .role {
-    font-size: 1rem;
-    margin: 0.5rem 0;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 /* Footer Section */
 .footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 20px;
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.footer .logo img {
+    max-width: 50px;
+    height: auto;
 }
 
 /* Lightbox Modal */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .lightbox-content {
-    margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
 }
 
-.close {
+.lightbox .close {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
     position: absolute;
     top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+    right: 30px;
+    cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .project-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .member {
+        flex: 1 1 100%;
+    }
 }

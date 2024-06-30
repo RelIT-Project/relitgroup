@@ -1,23 +1,38 @@
-// JavaScript to handle lightbox functionality
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
+  const projectImages = document.querySelectorAll(".project-item img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".close");
+  const closeButton = document.querySelector(".close");
 
-  document.querySelectorAll(".project-image").forEach(image => {
+  let currentIndex = 0;
+
+  projectImages.forEach((image, index) => {
       image.addEventListener("click", () => {
-          lightbox.style.display = "block";
-          lightboxImg.src = image.src;
+          currentIndex = index;
+          openLightbox();
       });
   });
 
-  closeBtn.addEventListener("click", () => {
+  closeButton.addEventListener("click", closeLightbox);
+
+  function openLightbox() {
+      lightbox.style.display = "block";
+      lightboxImg.src = projectImages[currentIndex].src;
+  }
+
+  function closeLightbox() {
       lightbox.style.display = "none";
+  }
+
+  lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+          closeLightbox();
+      }
   });
 
-  window.addEventListener("click", (event) => {
-      if (event.target == lightbox) {
-          lightbox.style.display = "none";
+  document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+          closeLightbox();
       }
   });
 });
