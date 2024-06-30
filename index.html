@@ -6,9 +6,6 @@
     <title>Relitgroup</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
@@ -184,31 +181,30 @@
                     <a href="http://www.linkedin.com/in/pablo-salina-6912b5196" target="_blank">
                         <img src="linkedin-icon.webp" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/PolGSal" target="_blank">
+                    <a href="https://github.com/pablosalina1" target="_blank">
                         <img src="github-icon.webp" alt="GitHub">
                     </a>
                 </div>
-                <p class="role">Frontend</p>
+                <p class="role">Backend</p>
             </div>
         </div>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="logo">
-                <img src="logo.png" alt="Footer Logo">
-            </div>
-        </div>
+        <div class="thin-horizontal-line"></div>
     </footer>
 
-    <!-- Lightbox Modal -->
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-image" src="" alt="Lightbox Image">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
     </div>
 
-    <!-- JavaScript -->
     <script src="scripts.js"></script>
 </body>
 </html>
