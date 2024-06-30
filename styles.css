@@ -212,3 +212,19 @@ body {
     cursor: pointer;
 }
 
+.send-button {
+    display: block;
+    width: 100%;
+    padding: 1.5rem; /* Aumenta el padding para hacer el botón más grande */
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #333;
+}

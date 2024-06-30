@@ -200,7 +200,7 @@
     <!-- Footer Section -->
     <footer class="footer">
         <div class="contact-form">
-            <form action="https://formspree.io/f/xanwyyed" method="POST">
+            <form  id="contact-form" action="https://formspree.io/f/xanwyyed" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -221,5 +221,24 @@
             </form>
         </div>
     </footer>
+    <script>
+        // Espera a que el DOM esté completamente cargado
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("contact-form");
+    
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Evita el envío por defecto del formulario
+    
+                // Aquí puedes agregar tu lógica para mostrar un mensaje de confirmación
+                alert("Message sent! We will contact you!");
+    
+                // O puedes mostrar un mensaje en algún otro elemento del DOM
+                // Por ejemplo, creando un div para el mensaje y mostrándolo
+                // let messageDiv = document.createElement("div");
+                // messageDiv.textContent = "Mensaje enviado satisfactoriamente!";
+                // form.parentNode.insertBefore(messageDiv, form.nextSibling);
+            });
+        });
+    </script>
 </body>
 </html>
