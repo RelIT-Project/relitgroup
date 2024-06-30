@@ -6,60 +6,6 @@
     <title>Relitgroup</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo.png" type="image/png">
-    <style>
-        /* Estilos CSS adicionales según tus necesidades */
-        .our-project {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .additional-text {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .additional-text-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .contact-form {
-            background-color: #f2f2f2;
-            text-align: center;
-            padding: 20px;
-        }
-        .contact-form form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .contact-form label {
-            display: inline-block;
-            text-align: left;
-            margin-bottom: 5px;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: calc(50% - 5px);
-            display: inline-block;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 2px solid #ccc;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        .contact-form textarea {
-            width: 100%;
-        }
-        .contact-form input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -242,7 +188,7 @@
                     <a href="http://www.linkedin.com/in/pablo-salina-6912b5196" target="_blank">
                         <img src="linkedin-icon.webp" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/pablosalina1" target="_blank">
+                    <a href="https://github.com/pablosalina" target="_blank">
                         <img src="github-icon.webp" alt="GitHub">
                     </a>
                 </div>
@@ -253,30 +199,27 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="thin-horizontal-line"></div>
-        
-        <!-- Formulario de contacto -->
         <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form action="mailto:adolfogsilveira@gmail.com" method="post" enctype="text/plain">
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="width: 48%;">
-                        <label for="fullname">Name and Surname:</label><br>
-                        <input type="text" id="fullname" name="fullname" required><br><br>
-                    </div>
-                    <div style="width: 48%;">
-                        <label for="phone">Phone:</label><br>
-                        <input type="tel" id="phone" name="phone"><br><br>
-                    </div>
+            <form action="submit.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <label for="email">Contact Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br>
-                <input type="submit" value="Send">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="send-button">SEND</button>
             </form>
         </div>
     </footer>
-
 </body>
 </html>
