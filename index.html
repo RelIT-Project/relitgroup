@@ -197,57 +197,30 @@
         </div>
     </main>
 
-<!-- Footer Section -->
-<footer class="footer">
-    <h2>CONTACT US</h2> <!-- Añadido -->
-    <div class="contact-form">
-        <form id="contactForm" action="https://formspree.io/f/xanwyyed" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="send-button">SEND</button>
-        </form>
-    </div>
-</footer>
-
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-        // Envía el formulario usando Fetch API o XMLHttpRequest
-        fetch(event.target.action, {
-            method: 'POST',
-            body: new FormData(event.target)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            // Limpia los campos después de enviar el formulario correctamente
-            document.getElementById("name").value = "";
-            document.getElementById("phone").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
-
-            // Vuelve al principio de la página
-            window.scrollTo(0, 0);
-        })
-        .catch(error => console.error('Error al enviar formulario:', error));
-    });
-</script>
-
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xanwyyed" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="send-button">SEND</button>
+            </form>
+        </div>
+    </footer>
+    
 </body>
 </html>
