@@ -1,194 +1,214 @@
-/* Reset CSS */
-* {
+/* Estilos generales */
+@font-face {
+    font-family: 'Lulo Clean';
+    src: url('luloclean.ttf') format('truetype');
+}
+
+body {
+    background-color: black;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Lulo Clean', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Header */
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
     text-align: center;
+    padding: 20px;
 }
 
-.header .logo img {
-    max-width: 150px;
+.logo img {
+    width: 100px;
 }
 
-/* Our Project */
-.our-project {
-    padding: 2rem 0;
+.group-name {
+    margin: 10px 0 0 0;
+    color: #00008B;
+}
+
+.our-project,
+.our-team {
     text-align: center;
+    padding: 20px;
 }
 
-.our-project h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.our-project h1,
+.our-team h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-.horizontal-line {
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    margin: 1rem 0;
+.horizontal-line,
+.thin-horizontal-line,
+.thick-horizontal-line {
+    width: 50%;
+    margin: 10px auto;
+    background-color: white; /* Añadido para las líneas */
 }
 
-.additional-text {
-    background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.horizontal-line,
+.thin-horizontal-line {
+    border-top: 2px solid white;
 }
 
-.additional-text-content p {
-    text-align: left;
-    margin-bottom: 1rem;
+.thick-horizontal-line {
+    border-top: 5px solid white;
 }
 
 .project-gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-row {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
 }
 
 .project-item {
-    margin: 0.5rem;
-}
-
-.project-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Our Team */
-.our-team {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
     text-align: center;
-    padding: 2rem 0;
+    cursor: pointer;
 }
 
-.thick-horizontal-line {
-    width: 100px;
-    height: 3px;
-    background-color: #333;
-    margin: 0 auto 1rem auto;
+.project-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
 
-.thin-horizontal-line {
-    width: 50px;
-    height: 2px;
-    background-color: #333;
-    margin: 0 auto 1rem auto;
+.project-item img:hover {
+    transform: scale(1.05);
 }
 
 .main-content {
-    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 .row {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
 }
 
 .member {
+    flex: 1 1 calc(25% - 20px);
+    margin: 10px;
     text-align: center;
-    margin-bottom: 2rem;
-    flex-basis: 20%;
 }
 
 .profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    border: 2px solid white;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.social-links {
-    margin-top: 0.5rem;
+.profile-pic:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
 }
 
 .social-links a {
-    margin: 0 0.5rem;
+    margin: 0 5px;
+    text-decoration: none;
 }
 
-/* Footer */
+.social-links img {
+    width: 31px;
+    height: 31px;
+}
+
+.role {
+    font-size: 0.8em;
+}
+
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 0;
     text-align: center;
+    padding: 20px;
+    border-top: 1px solid white;
+}
+
+/* Estilos adicionales para secciones específicas */
+.additional-text {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.additional-text-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
     background-color: #444;
-    padding: 1rem;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
-    margin-bottom: 1rem;
+.contact-form form {
+    margin-top: 20px;
 }
 
-.form-group label {
+.contact-form label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #fff;
+    margin-bottom: 5px;
+    color: white;
 }
 
-.form-group input,
-.form-group textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #eee;
-    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-.form-group textarea {
+.contact-form textarea {
     resize: vertical;
 }
 
-.send-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: #000;
-    color: #fff;
+.contact-form input[type="submit"] {
+    background-color: black;
+    color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.send-button:hover {
-    background-color: #333;
-}
