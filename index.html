@@ -197,11 +197,11 @@
         </div>
     </main>
 
-    <!-- Footer Section -->
+<!-- Footer Section -->
 <footer class="footer">
     <h2>CONTACT US</h2> <!-- Añadido -->
     <div class="contact-form">
-        <form action="https://formspree.io/f/xanwyyed" method="POST" onsubmit="handleFormSubmit()">
+        <form action="https://formspree.io/f/xanwyyed" method="POST" onsubmit="handleFormSubmit(event)">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -224,18 +224,30 @@
 </footer>
 
 <script>
-    function handleFormSubmit() {
-        // Limpiar el formulario después del envío
-        document.getElementById("name").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("message").value = "";
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-        // Volver al principio de la página
-        window.scrollTo(0, 0);
+        // Envía el formulario usando Fetch API o XMLHttpRequest
+        fetch(event.target.action, {
+            method: 'POST',
+            body: new FormData(event.target)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Limpia los campos después de enviar el formulario correctamente
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+
+            // Vuelve al principio de la página
+            window.scrollTo(0, 0);
+        })
+        .catch(error => console.error('Error al enviar formulario:', error));
     }
 </script>
 
-    
 </body>
 </html>
